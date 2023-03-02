@@ -4,9 +4,118 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webpack boilerplate</title>
+    <title>CRM IndexedDB</title>
 <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
-<body>
-  <h1 class="text-4xl text-blue-700">My Webpack + Tailwind App</h1>
+<body class="min-h-100 bg-gray-200">
+  <div class="md:flex min-h-screen md:align-top">
+      <aside class="md:w-2/5 lg:w-2/5 xl:w-1/5 bg-teal-600 px-5 py-10">
+          <h1 class="uppercase text-white tracking-wide text-2xl  font-bold mt-2">CRM - IndexedDB</h1>
+          <p class="mt-10 text-white">Manage your Clients with the CRM - IndexedDB</p>
+          <nav class="mt-8">
+              <a  
+                  href="#" 
+                  class="px-3 py-1 text-white block hover:bg-teal-700 hover:text-yellow-400 bg-teal-700"
+                  id="customers"
+              >Customers</a>
+              <a 
+                  href="#" 
+                  class="px-3 py-1 text-white block hover:bg-teal-900 mt-2 hover:text-yellow-400"
+                  id="new-customer"
+              >New Customer</a>
+          </nav>
+      </aside> <!--sidebar-->
+      <main class="md:w-3/5  xl:w-4/5 px-5 py-10 bg-gray-200">
+          
+
+          
+
+          <h2 class="text-3xl font-light text-center">Customers</h2>
+
+          <p class="text-center text-gray-600 mt-10">No Customers</p>
+
+          <section id="customers-section" class="flex flex-col mt-10">
+              <div class="py-2 overflow-x-auto">
+                <div class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+                  <table class="min-w-full">
+                      <thead class="bg-gray-100 ">
+                          <tr>
+                              <th class="px-6 py-3 border-b border-gray-200  text-left text-xs leading-4 font-medium text-gray-600 uppercase tracking-wider">
+                                      Customer name
+                              </th>
+                              <th class="px-6 py-3 border-b border-gray-200  text-left text-xs leading-4 font-medium text-gray-600 uppercase tracking-wider">
+                                      Phone
+                              </th>
+                              <th class="px-6 py-3 border-b border-gray-200  text-left text-xs leading-4 font-medium text-gray-600 uppercase tracking-wider">
+                                      Company
+                              </th>
+                              <th class="px-6 py-3 border-b border-gray-200  text-left text-xs leading-4 font-medium text-gray-600 uppercase tracking-wider">
+                                      Actions 
+                              </th>
+                          </tr>
+                      </thead>
+                      <tbody id="list-customer" class="bg-white"></tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+            <section id="new-customer-section" class="hidden flex-col mt-10 items-center">
+              <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 w-10/12 md:w-8/12 lg:w-6/12">
+                  <div class=" shadow overflow-hidden sm:rounded-lg border-b border-gray-200 ">
+                      <form id="form" class="bg-white p-3">
+                          <div class="mb-4">
+                              <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
+                              <input 
+                                  class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                  id="name"
+                                  name="name"
+                                  type="text"
+                                  placeholder="Customer Name"
+                              />
+                          </div>
+                          <div class="mb-4">
+                              <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                              <input 
+                                  class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                  id="email"
+                                  name="email"
+                                  type="email"
+                                  placeholder="Customer Email"
+                              />
+                          </div>
+
+                          <div class="mb-4">
+                              <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">Phone</label>
+                              <input 
+                                  class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                  id="phone"
+                                  name="phone"
+                                  type="tel"
+                                  placeholder="Customer Phone"
+                              />
+                          </div>
+
+                          <div class="mb-4">
+                              <label class="block text-gray-700 text-sm font-bold mb-2" for="company">Company</label>
+                              <input 
+                                  class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                  id="company"
+                                  name="company"
+                                  type="text"
+                                  placeholder="Customer Company"
+                              />
+                          </div>
+
+
+                          <input
+                              type="submit"
+                              class="bg-teal-600 hover:bg-teal-900 w-full mt-5 p-2 text-white uppercase font-bold"
+                              value="Add Customer"
+                          />
+                      </form>
+                  </div>
+              </div>
+          </section>
+      </main>
+  </div>
 </body>
 </html>
