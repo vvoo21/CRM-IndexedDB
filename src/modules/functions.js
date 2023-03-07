@@ -150,7 +150,7 @@ export const getId = () => {
     if (cursor) {
       showNewCustomer();
 
-      idCustomer = Number(window.location.href.slice(45, 58));
+      idCustomer = Number(window.location.href.substring(window.location.href.search('=') + 1));
 
       if (cursor.value.id === idCustomer) {
         nameInput.value = cursor.value.name;
@@ -247,7 +247,7 @@ export const getCustomers = () => {
         tr.appendChild(td4);
 
         const editBtn = document.createElement('a');
-        editBtn.setAttribute('href', `#${id}`);
+        editBtn.setAttribute('href', `#?id=${id}`);
         editBtn.classList.add('text-teal-600', 'hover:text-teal-900', 'mr-5', 'editBtn');
         editBtn.textContent = 'Edit';
 
