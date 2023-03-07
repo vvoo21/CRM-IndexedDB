@@ -174,12 +174,10 @@ export const deletecustomer = (e) => {
     objectStore.delete(idDelete);
 
     transaction.oncomplete = () => {
-      printAlert('The customer was deleted successfully');
-
       e.target.parentElement.parentElement.remove();
     };
 
-    transaction.onerror = () => 'TThere was an error';
+    transaction.onerror = () => 'There was an error';
   }
 };
 
