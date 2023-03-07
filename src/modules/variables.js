@@ -1,7 +1,7 @@
 export const form = document.querySelector('#form');
 export const listCustomer = document.querySelector('.list-customer');
 
-// Inputs 
+// Inputs
 export const nameInput = document.querySelector('#name');
 export const emailInput = document.querySelector('#email');
 export const phoneInput = document.querySelector('#phone');

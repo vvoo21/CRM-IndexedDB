@@ -1,7 +1,9 @@
 import './style.css';
-import { createDB, verifyClient, getCustomers, showCustomers, showNewCustomer } from './modules/functions.js';
 import {
-  form, customersLink, newCustomerLink, customerSection, newCustomerSection,
+  createDB, verifyClient, getCustomers, showCustomers, showNewCustomer,
+} from './modules/functions.js';
+import {
+  form, customersLink, newCustomerLink,
 } from './modules/variables.js';
 
 form.addEventListener('submit', verifyClient);
@@ -10,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   createDB();
 
   getCustomers();
-  
 });
 
 // navigate to the different sections
