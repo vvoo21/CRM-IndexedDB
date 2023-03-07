@@ -150,7 +150,7 @@ export const getId = () => {
     if (cursor) {
       showNewCustomer();
 
-      idCustomer = Number(window.location.href.slice(23, 36));
+      idCustomer = Number(window.location.href.slice(45, 58));
 
       if (cursor.value.id === idCustomer) {
         nameInput.value = cursor.value.name;
