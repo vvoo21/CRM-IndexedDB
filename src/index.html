@@ -31,7 +31,7 @@
 
           <h2 class="text-3xl font-light text-center">Customers</h2>
 
-          <p class="text-center text-gray-600 mt-10">No Customers</p>
+          <p class="text-center text-gray-600 mt-10 no-customers"></p>
 
           <section id="customers-section" class="flex flex-col mt-10">
               <div class="py-2 overflow-x-auto">
@@ -53,7 +53,7 @@
                               </th>
                           </tr>
                       </thead>
-                      <tbody id="list-customer" class="bg-white"></tbody>
+                      <tbody class="bg-white list-customer"></tbody>
                   </table>
                 </div>
               </div>
@@ -108,7 +108,7 @@
 
                           <input
                               type="submit"
-                              class="bg-teal-600 hover:bg-teal-900 w-full mt-5 p-2 text-white uppercase font-bold"
+                              class="bg-teal-600 hover:bg-teal-900 w-full mt-5 p-2 text-white uppercase font-bold btnSubmit"
                               value="Add Customer"
                           />
                       </form>
