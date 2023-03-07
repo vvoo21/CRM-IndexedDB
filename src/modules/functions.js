@@ -163,20 +163,24 @@ export const getId = () => {
   };
 };
 
-export const deletecustomer = (id) => {
-  const transaction = dataBase.transaction(['crm'], 'readwrite');
+export const deletecustomer = (e) => {
+  if (e.target.classList.contains('delete')) {
+    const idDelete = Number(e.target.id);
 
-  const objectStore = transaction.objectStore('crm');
+    const transaction = dataBase.transaction(['crm'], 'readwrite');
 
-  objectStore.delete(id);
+    const objectStore = transaction.objectStore('crm');
 
-  transaction.oncomplete = () => {
-    printAlert('The customer was deleted successfully');
+    objectStore.delete(idDelete);
 
-    window.location.reload();
-  };
+    transaction.oncomplete = () => {
+      printAlert('The customer was deleted successfully');
 
-  transaction.onerror = () => 'TThere was an error';
+      e.target.parentElement.parentElement.remove();
+    };
+
+    transaction.onerror = () => 'TThere was an error';
+  }
 };
 
 export const getCustomers = () => {
@@ -259,11 +263,11 @@ export const getCustomers = () => {
 
         const deleteBtn = document.createElement('a');
         deleteBtn.setAttribute('href', '#');
-        deleteBtn.setAttribute('data-cliente', id);
-        deleteBtn.classList.add('text-red-600', 'hover:text-red-900');
+        deleteBtn.setAttribute('id', id);
+        deleteBtn.classList.add('text-red-600', 'hover:text-red-900', 'delete');
         deleteBtn.textContent = 'Delete';
 
-        deleteBtn.onclick = () => deletecustomer(id);
+        // deleteBtn.onclick = () => deletecustomer(id);
 
         td4.appendChild(deleteBtn);
 
